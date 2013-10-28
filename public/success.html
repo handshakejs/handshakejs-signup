@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handshake.js Success</title>
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
+
+</head>
+<body>
+  <h1>Success</h1>
+
+  <p>Your app_name is: <strong class="app-name">app_name here</strong></p>
+
+  <p>Now you can proceed to use <a href="https://github.com/scottmotte/handshake-js">handshake.js</a> in your application. See the <a href="https://github.com/scottmotte/handshake-js">README</a> for how to add handshake.js to your application.</p>
+
+  <hr/>
+
+  <h3>Prefer to host your own?</h3>
+
+  <p>It is possible to host your own instance of handshake.js if you prefer. It is <a href="https://github.com/scottmotte/handshake">opensourced here</a>.</p>
+
+  <script type="text/javascript">
+    var params = $.url(window.location.href).param();
+    $(".app-name").html(params.app_name);
+  </script>
+</body>
+</html>

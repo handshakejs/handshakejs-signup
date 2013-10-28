@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handshake.js Signup</title>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+  <form class="form-signup">
+    <h1 class="form-signup-heading">Create your handshake.js app</h1>
+    <input id="app_name" type="text" class="form-control" placeholder="app_name" autofocus>
+    <input id="email" type="text" class="form-control" placeholder="email">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  </form>
+
+</div> <!-- /container -->
+
+<script type="text/javascript">
+  $.get("https://handshakejs.herokuapp.com"); // warm up the heroku app.
+
+  $(".form-signup").submit(function(e) {
+    e.preventDefault();
+
+    var app_name  = $("#app_name").val();
+    var email     = $("#email").val();
+    var payload   = {app_name: app_name, email: email};
+
+    $.post("https://handshakejs.herokuapp.com/apps/create", payload, function(json) {
+      if (json.success) {
+        window.location = "/success.html?app_name="+app_name;
+        // redirect here since it was a success
+      } else {
+        alert(json.errors.message);
+      }
+    });
+
+  });
+
+</script>
+</body>
+</html>
