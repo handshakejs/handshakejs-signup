@@ -28,7 +28,7 @@
     var email     = $("#email").val();
     var payload   = {app_name: app_name, email: email};
 
-    $.post("https://handshakejs.herokuapp.com/apps/create", payload, function(json) {
+    $.post("https://handshakejs.herokuapp.com/api/v0/apps/create", payload, function(json) {
       if (json.success) {
         window.location = "/success.html?app_name="+app_name;
         // redirect here since it was a success
