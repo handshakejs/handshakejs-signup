@@ -13,6 +13,7 @@
   <h1>Success</h1>
 
   <p>Your app_name is: <strong class="app-name">app_name here</strong></p>
+  <p>Your salt is: <strong class="salt">salt here</strong></p>
 
   <p>Now you can proceed to use <a href="https://github.com/scottmotte/handshake-js">handshake.js</a> in your application. See the <a href="https://github.com/scottmotte/handshake-js">README</a> for how to add handshake.js to your application.</p>
 
@@ -25,6 +26,7 @@
   <script type="text/javascript">
     var params = $.url(window.location.href).param();
     $(".app-name").html(params.app_name);
+    $(".salt").html(params.salt);
   </script>
 </body>
 </html>
