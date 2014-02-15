@@ -31,8 +31,8 @@
 
     $.post("https://handshakejs.herokuapp.com/api/v0/apps/create", payload, function(json) {
       if (json.success) {
-        var app = payload.app;
-        window.location = "/success.html?app_name="+app.app_name+"&salt="+payload.app.salt;
+        var app = json.app;
+        window.location = "/success.html?app_name="+app.app_name+"&salt="+app.salt;
         // redirect here since it was a success
       } else {
         alert(json.error.message);
