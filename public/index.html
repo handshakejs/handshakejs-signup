@@ -13,7 +13,6 @@
     <h1 class="form-signup-heading">Register your handshake.js app_name</h1>
     <input id="app_name" type="text" class="form-control" placeholder="app_name" autofocus>
     <input id="email" type="text" class="form-control" placeholder="email">
-    <input id="salt" type="text" class="form-control" placeholder="salt">
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
   </form>
@@ -28,8 +27,7 @@
 
     var app_name  = $("#app_name").val();
     var email     = $("#email").val();
-    var salt      = $("#salt").val();
-    var payload   = {app_name: app_name, email: email, salt: salt};
+    var payload   = {app_name: app_name, email: email};
 
     $.post("https://handshakejs.herokuapp.com/api/v0/apps/create", payload, function(json) {
       if (json.success) {
